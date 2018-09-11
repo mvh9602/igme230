@@ -2,3 +2,7 @@ body{
     background-image: url(../images/star_tile.jpg);
     background-repeat: repeat-xy; 
 }
+img{
+    height: 259px;
+    width: 194px;
+}
