@@ -1,10 +1,14 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
 body{
     background-image: url(../images/star_tile.jpg);
     background-repeat: repeat-xy; 
 }
 img{
-    height: 259px;
-    width: 194px;
+    height: 302px;
+    width: 233px;
 }
 .left{
     float: left;
@@ -14,9 +18,5 @@ img{
 .right{
     float: left;
     width: 49%;
-    margin: auto;
-}
-.middle{
-    float: middle;
     margin: auto;
 }
