@@ -5,10 +5,23 @@
 body{
     background-image: url(../images/star_tile.jpg);
     background-repeat: repeat-xy; 
+    max-width: 40%;
+    margin: auto;
+}
+.container{
+    float: middle;
+    background-color: #ddd;
+    height: 2000px;
+    padding: 30px;
+}
+.top{
+    padding-top: 10%;
+    padding-bottom: 20%;
 }
 img{
-    height: 302px;
+    height: 233px;
     width: 233px;
+    border-radius: 50%;
 }
 .left{
     float: left;
@@ -19,4 +32,31 @@ img{
     float: left;
     width: 49%;
     margin: auto;
+}
+h1, h3{
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+ul{
+    list-style-type: circle;
+}
+a{
+    text-decoration: none;
+    font-weight: 600;
+    color: #555;
+}
+a:hover{
+    text-decoration: underline;
+}
+a:active{
+    background-color: #999;
+}
+footer{
+    color: white;
+    background-color: #999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }
