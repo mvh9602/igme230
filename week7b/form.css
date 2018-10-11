@@ -1,0 +1,55 @@
+form {
+    /* Center form */
+    margin: 0 auto;
+    width: 400px;
+    /* Outline form */
+    padding: 1em;
+    border: 1px solid #CCC;
+}
+
+form div + div {
+    margin-top: 1em;
+}
+
+label {
+    /* Make sure labels have same size and proper alignment */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+
+input, textarea {
+    /* Unify font for all text fields
+       Textareas use a monospace font by default */
+    font: 1em sans-serif;
+
+    /* Give all text fields the same size */
+    width: 300px;
+    box-sizing: border-box;
+
+    /* Make a nice looking border */
+    border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+    /* Highlight active elements */
+    border-color: #000;
+}
+
+textarea {
+    /* Align multiline text fields with their labels */
+    vertical-align: top;
+
+    /* Make room for text */
+    height: 5em;
+}
+
+.button {
+    /* Position buttons to text field positions with label element size */
+    padding-left: 90px;
+}
+
+button {
+    /* Margin represents same space between labels and their text fields */
+    margin-left: .5em;
+}
