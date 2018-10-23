@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>DOM Exercise</title>
+
+    <style>
+         @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i');
+        @import url('https://fonts.googleapis.com/css?family=Orbitron:400,700,900');        html { font-family: Lato; font-size: 16px; }
+        main { max-width: 800px; margin: 0 auto;}
+        h1 { font-weight: 900;}
+        @keyframes entrance {
+            from { transform: translateX(-2000px); }
+            to { transform: translateX(0px); }
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <main>
+        <h1>My DOM Example Page</h1>
+
+        <h2>Info</h2>
+        <p>This page is part of a JavaScript exercise being done in Liz Lawley's fall 2018 sections of IGME-230 Web Site Design &amp; Implementation.</p>
+
+        <h2>More Info</h2>
+        <p>ancient alien extraterrestrial origin giorgio chariot of the gods choral castle , cover up ancient religions kachina doll extraterrestrial origin sun disc. ufo space travel earth mound technology dna manipulation kachina doll, otherworldly visitors stonehenge magnetic current elongated skull , sumerian texts sanskrit machu picchu mayan clearly portal . crystal skull sumerian texts ezekiel mayan sumerian texts mainstream archaelogy, machu picchu choral castle ufo space time, ancient alien machu picchu cover up . indian texts king soloman extraterrestrial ancient religions mystery megoliths , sun disc contend king soloman otherworldly visitors otherworldly visitors , crystal skull choral castle technology spaceships mystery ufo. </p>
+
+        <h2>Pictures</h2>
+        <p>The aliens ate my camera.</p>
+    </main>
+
+    
+<script>
+        //get a reference to first <h1> on the page
+        let h1 = document.querySelector('h1');
+    
+        //change HTML
+        h1.innerHTML = 'My <em>UFO</em> Page';
+
+        //get reference to paragraph following second h2
+        let text = document.querySelector('h2:nth-of-type(2)+p');
+
+        //set CSS values through .style
+        h1.style.fontFamily = 'Orbitron';
+        h1.style.fontSize = '3rem';
+        text.style.color = 'green';
+        text.style.fontFamily = 'Orbitron';
+        text.style.fontSize = '.75rem';
+        text.style.border = '2px solid magenta';
+        text.style.padding = '10px';
+        text.style.margin = '5px';
+
+        //get reference to all h2 elements
+        let allHeadings = document.querySelectorAll("h2");
+
+        //loop through h2 array to add number and animation
+        for (let i = 0; i < allHeadings.length; i++) {
+            let h2 = allHeadings[i];
+            let currentText = h2.innerHTML;
+            h2.innerHTML = "#" + (i + 1) + " - " + currentText;
+
+            h2.style.animation = "entrance .5s " + (i * .5) + "s linear both";
+            //h2.style.animation = `entrance .5s $(i*.5)s linear both`;
+        }
+</script>
+</body>
+
+</html>

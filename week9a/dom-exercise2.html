@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>DOM Exercise 2</title>
+
+    <style>
+         @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i');
+        html { font-family: Lato; font-size: 16px; }
+        main { max-width: 800px; margin: 0 auto; border: 1px dotted black; padding: 0 10px;} h1 { font-weight: 900;}
+    </style>
+
+
+</head>
+
+<body>
+    <main>
+        <h1>Happy Little Clouds</h1>
+
+        <h2>Info</h2>
+        <p>If what you're doing doesn't make you <strong>happy</strong> - you're doing the wrong thing. How to paint. That's easy. What to paint. That's much harder. We spend so much of our life looking - but never seeing. I want everybody to be happy. That's what it's all about. Remember how free clouds are. They just lay around in the sky all day long.</p>
+
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://www.bobrosslipsum.com/">Bob Ross Lipsum</a></li>
+            <li><a href="https://bobross.com/">Official Bob Ross Page</a></li>
+        </ul>
+            
+            
+    </main>
+
+    <script>
+        let footer = document.createElement("footer");
+
+        //title attribute gives a tooltip
+        footer.setAttribute("title", "Don't copy this page without my permission!");
+
+        let textNode = document.createTextNode("&copy; 20XX by Matt Hoffman");
+
+        footer.appendChild(textNode);
+
+        document.body.appendChild(footer);
+
+        footer.style.textAlign = "center";
+
+        //same code as above, but without document.createTextNode() or element.setAttribute()
+        let footer2 = document.createElement("footer");
+        footer2.title = "I'm serious! Don't copy it!";
+        footer2.innerHTML = "&copy; 20XX by Matt Hoffman";
+        document.body.appendChild(footer2);
+        footer2.style.textAlign = "center";
+
+        //get reference to Bob Ross site list item
+        let targetListItem = document.querySelector("li a[href*='bobross.com']").parentNode;
+
+        //create new item
+        let newListItem = document.createElement("li");
+        newListItem.innerHTML = "<a href= 'https://www.youtube.com/channel/UCxcnsr1R5Ge_fbTu5ajt8DQ'>Bob Ross Youtube Channel</a>";
+
+        //insert new item into list, before target item
+        let unorderedList = document.querySelector("ul");
+        unorderedList.insertBefore(newListItem, targetListItem);
+
+        //delete first footer
+        document.body.removeChild(document.querySelector("footer"));
+    </script>
+</body>
+
+</html>
