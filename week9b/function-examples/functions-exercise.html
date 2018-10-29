@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Week 9 Homework</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i');
+       html { font-family: Lato; font-size: 16px; }
+       main { max-width: 800px; margin: 0 auto; border: 1px dotted black; padding: 0 10px;} h1 { font-weight: 900;}
+   </style>
+
+</head>
+
+<body>
+    <main>
+        <h1>My Favorites</h1>
+        <h2>My Favorite Colors</h2>
+    
+        <ol id="colorsList">
+    
+        </ol>
+    
+        <h2>My Favorite Foods</h2>
+    
+        <ol id="foodsList">
+    
+        </ol>
+    
+      </main>
+    
+    <script>
+        "use strict";
+        let colors = ["red", "green", "blue"]; // add some colors
+        let foods = ["steak", "smoothie", "berries"]; // add some foods
+
+        let colorList = document.getElementById("colorsList");
+        let foodList = document.getElementById("foodsList");
+
+        /*for(let c in colors){
+            let newListItem = document.createElement("li");
+            newListItem.innerHTML = colors[c];
+            colorList.appendChild(newListItem);
+        }
+        for(let f in foods){
+            let newListItem = document.createElement("li");
+            newListItem.innerHTML = foods[f];
+            foodsList.appendChild(newListItem);
+        }*/
+
+        function createList(listElement, array){
+            for(let a in array){
+            let newListItem = document.createElement("li");
+            newListItem.innerHTML = array[a];
+            listElement.appendChild(newListItem);
+            }
+        }
+
+        createList(colorList, colors);
+        createList(foodList, foods);
+    </script>
+    
+</body>
+
+</html>
