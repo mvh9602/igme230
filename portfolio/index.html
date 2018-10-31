@@ -13,7 +13,7 @@
 </style>
     <title>Matt Hoffman's Portfolio</title>
 </head>
-<body>
+<body onload = "onloadFunctions();">
     
     <div class="w3-content w3-display-container" style="max-width:800px">
         <img class="mySlides" src="images/img_nature_wide.jpg" style="width:100%">
@@ -29,13 +29,17 @@
       </div>
 
 <script>
+"use strict";
 
-let slideIndex = 1;
-showDivs(slideIndex);
-carousel();
+let slideIndex = 0;
+
+function onloadFunctions(){
+    let interval = setInterval(plusDivs(1), 2000)
+}
 
 function plusDivs(n) {
     showDivs(slideIndex += n);
+    console.log("Adding to index...\nIndex at " + slideIndex);
 }
 
 function currentDiv(n){
@@ -56,6 +60,8 @@ function showDivs(n){
     }
     x[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " w3-white";
+    //clearInterval(interval);
+    //interval = setInterval(plusDivs(1), 2000);
 }
 
 function carousel(){
