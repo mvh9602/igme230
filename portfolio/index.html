@@ -1,82 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style/portfolio.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-.mySlides {display:none}
-.w3-left, .w3-right, .w3-badge {cursor:pointer}
-.w3-badge {height:13px;width:13px;padding:0}
-</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Matt Hoffman's Portfolio</title>
 </head>
-<body onload = "onloadFunctions();">
-    
-    <div class="w3-content w3-display-container" style="max-width:800px">
-        <img class="mySlides" src="images/img_nature_wide.jpg" style="width:100%">
-        <img class="mySlides" src="images/img_snow_wide.jpg" style="width:100%">
-        <img class="mySlides" src="images/img_mountains_wide.jpg" style="width:100%">
-        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-          <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-          <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-          <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+
+<body onload="onloadFunctions();">
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume (HTML)</a>
+        <a href="projects.html">Projects</a>
+        <a href="documentation.html">Documentation</a>
+    </div>
+    <div class="flex-container">
+        <div class="flex-item" id="profile-box">
+            <img class="w3-circle w3-center pfp" src="images/pfp_placeholder.jpg" alt="My face">
+            <h1 class="w3-center">Matt Hoffman</h1>
+            <h1 class="w3-center">Game Dev</h1>
+            <span class="burger w3-center" onclick="openNav()">&#9776; menu</span>
         </div>
-      </div>
+        <div class="flex-item divider w3-dark-gray"> </div>
+        <div class="flex-item w3-center" id="about-box">
+            <p>Welcome to my portfolio webpage! I'm a second year game dev student who's looking to be hired into the
+                tech industry! If you'd like to know more about me,
+                click on the about tab in the menu. If you'd like to look at my work or see an html page with my resume,
+                check the projects and resume tabs respectively.
+                Below you can preview my work, download my resume, or get into contact with me by clicking the appropriate icons. Thanks for stopping by!</p>
+        </div>
+        <div class="flex-item">
+            <h1 class="gallery-text w3-center">Project Preview</h1>
+            <h3 class="slide-title gallery-text w3-center">Astral Outbreak</h3>
+        </div>
+        <div class="w3-content w3-display-container flex-item gallery">
+            <img class="mySlides" src="images/img_nature_wide.jpg" alt="Astral Outbreak" data-name="Astral Outbreak">
+            <img class="mySlides" src="images/img_snow_wide.jpg" alt="Aquatic Adventure" data-name="Aquatic Adventure">
+            <img class="mySlides" src="images/img_mountains_wide.jpg" alt="Axe Model: Maya" data-name="Axe Model: Maya">
+            <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle interactable">
+                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1, 0)">&#10094;</div>
+                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1, 0)">&#10095;</div>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1, 0)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2, 0)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3, 0)"></span>
+            </div>
+        </div>
+        <div class="flex-item icons">
+            <a href="#"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a>
+            <a href="mailto:mvh9602@rit.edu?subject=Mail from Portfolio"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/matt-hoffman-3a6133127/"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <script>
+        "use strict";
 
-<script>
-"use strict";
+        let slideIndex = 1;
+        let isOpen = false;
+        let title = document.getElementsByClassName("slide-title");
 
-let slideIndex = 0;
+        function onloadFunctions() {
+            showDivs(slideIndex);
+        }
 
-function onloadFunctions(){
-    let interval = setInterval(plusDivs(1), 2000)
-}
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
 
-function plusDivs(n) {
-    showDivs(slideIndex += n);
-    console.log("Adding to index...\nIndex at " + slideIndex);
-}
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
 
-function currentDiv(n){
-    showDivs(slideIndex = n);
-}
+        function showDivs(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-white";
+            title[0].innerHTML = slides[slideIndex - 1].dataset.name;
+        }
 
-function showDivs(n){
-    let i;
-    let x = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("demo");
-    if(n > x.length) { slideIndex = 1; }
-    if(n < 1) { slideIndex = x.length; }
-    for(i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    for(i + 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" w3-white", "");
-    }
-    x[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " w3-white";
-    //clearInterval(interval);
-    //interval = setInterval(plusDivs(1), 2000);
-}
+        function openNav() {
+            if (isOpen) { closeNav(); return; }
+            document.getElementById("mySidenav").style.width = "250px";
+            isOpen = true;
+        }
 
-function carousel(){
-    let i;
-    let x = document.getElementsByClassName("mySlides");
-    for(i = 0; i < x.length; i++){
-        x[i].style.display = "none";
-    }
-    slideIndex++;
-    if(slideIndex > x.length){ slideIndex = 1; }
-    x[slideIndex-1].style.display = "block";
-    setTimeout(carousel, 4000);
-}
-
-</script>
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            isOpen = false;
+        }
+    </script>
 
 </body>
+
 </html>

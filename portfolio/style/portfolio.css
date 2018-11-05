@@ -1,0 +1,183 @@
+/******
+IMPORTS
+******/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/************
+FLEXBOX SETUP
+************/
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.flex-item {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    padding-top: 10px;
+    background-color: #637975
+}
+
+/********
+NAV SETUP
+********/
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #536561;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #d0d8d7;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #eff2f2;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.burger {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: block;
+}
+
+/*********
+PAGE SETUP
+*********/
+
+body {
+    background-color: #637975;
+    color: #fafbfb;
+    font-family: 'Roboto', sans-serif;
+}
+
+.page-head {
+    align-self: stretch;
+    background-color: #b0bfbc;
+    padding-bottom: 10px;
+}
+
+#about-box {
+    padding-bottom: 40px;
+}
+
+#about-box p {
+    max-width: 60%;
+    align-self: center;
+    float: center;
+    margin: auto;
+}
+
+.icons {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 75px;
+    padding-bottom: 100px;
+}
+
+.img-text-format {
+    max-width: 60%;
+    align-self: center;
+    float: center;
+    margin: auto;
+    padding: 40px;
+}
+
+/******
+PROFILE
+******/
+
+#profile-box{
+    background-color: #b0bfbc;
+    align-self: stretch;
+}
+
+.pfp {
+    max-width: 30%;
+    max-height: 30%;
+    border: 2px solid #536561;
+    display: block;
+    margin: auto;
+}
+
+.divider {
+    max-width: 90%;
+    max-height: 1px;
+    margin: auto;
+    float: center;
+}
+
+/************
+IMAGE GALLERY
+************/
+
+.gallery {
+    max-width: 600px;
+}
+
+.mySlides .interactable {
+    width: 100%;
+}
+
+.mySlides {
+    display: none;
+    padding-bottom: 50px;
+}
+
+.w3-left, .w3-right, .w3-badge {
+    cursor: pointer;
+}
+
+.w3-badge {
+    height: 13px;
+    width: 13px;
+    padding: 0
+}
+
+.gallery-text {
+    align-self: center;
+    padding-top: 10px;
+}
+
+/************
+MEDIA QUERIES
+************/
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
