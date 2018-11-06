@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/portfolio.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Matt Hoffman's Work</title>
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume (HTML)</a>
+        <a href="#">Projects</a>
+        <a href="documentation.html">Documentation</a>
+    </div>
+    <div class="flex-container">
+        <div class="flex-item page-head w3-center" id="title-box">
+            <h1>My Projects</h1>
+        </div>
+        <div class="flex-item page-head w3-center" id="nav-box">
+            <span onclick="openNav()">&#9776; menu</span>
+        </div>
+        <div class="flex-item img-text-format">
+            <h1>Astral Outbreak</h1>
+            <img src="images/img_mountains_wide.jpg" alt="AO Screenshot">
+            <p>2017. Astral Outbreak was a group project for GDAPS 2 during my first year at RIT. Within the group I
+                was team lead. My responsibility was schedule meetings, manage documents, ensure progress, and help
+                program. I mainly worked on enemy AI and helped the architect work on non UI programming. Created in
+                monogame. In Astral Outbreak, you play as a stranded space citizen exploring a destroyed space ship in
+                an attempt at survival. It is a short 2D shooter with ability upgrades and unique bosses.
+            </p>
+        </div>
+        <div class="flex-item img-text-format">
+            <h1>Aquatic Adventure</h1>
+            <img src="images/img_nature_wide.jpg" alt="AA Screenshot">
+            <p>2015. Aquatic Adventure was group project for an extracuricular technology group in my high school,
+                called InterAlliance. In the group, I helped others work with programming in the jmonkey engine. I also
+                worked on the AI for sharks. This was the first time working on a game for all of us. Aquatic Adventure
+                is an educational game about the lifecycle of a clown fish. You play as the fish from birth to death,
+                growing and avoiding sharks as well as starvation. This game won 4th place at the 2015 Tech-Olympics in
+                Cincinnati.
+            </p>
+        </div>
+        <div class="flex-item img-text-format">
+            <h1>Axe Model: Maya</h1>
+            <img src="images/img_snow_wide.jpg" alt="Axe Screenshot">
+            <p>2017. This 3D model was made for 3DAAP, done entirely from scratch. The axe was modelled, skinned, and
+                textured by myself.</p>
+        </div>
+    </div>
+
+    <script>
+        "use strict";
+
+        let isOpen = false;
+
+        function openNav() {
+            if (isOpen) { closeNav(); return; }
+            document.getElementById("mySidenav").style.width = "250px";
+            isOpen = true;
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            isOpen = false;
+        }
+    </script>
+</body>
+
+</html>

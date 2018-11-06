@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/portfolio.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Portfolio Documentation</title>
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume (HTML)</a>
+        <a href="projects.html">Projects</a>
+        <a href="#">Documentation</a>
+    </div>
+    <div class="flex-container">
+        <div class="flex-item page-head w3-center" id="title-box">
+            <h1>Documentation</h1>
+        </div>
+        <div class="flex-item page-head w3-center">
+            <span onclick="openNav()">&#9776; open</span>
+        </div>
+        <div class="flex-item img-text-format">
+            <h1>Project Timeline</h1>
+            <ul>
+                <li>Created HTML framework for content</li>
+                <li>Looked into what technology I needed</li>
+                <li>Decided not to use any major css framework</li>
+                <li>Modified code from w3schools on image galleries to make them much prettier and more intuitive</li>
+                <li>Adopted w3.css for certain tools, like w3-center and w3-badge</li>
+                <li>Ran into numerous JS issues without after a lot of advice</li>
+                <li>Reverted to fairly basic image gallery</li>
+                <li>Implimented a sidebar hamburger menu from w3, changed css and added a toggle</li>
+                <li>Adapted HTML to use flexbox for positioning and responsive design</li>
+                <li>Worked on CSS for index, struggled with fine-tuned positioning</li>
+                <li>Added link icons for index page</li>
+                <li>Made CSS for remaining pages</li>
+            </ul>
+            <h1>Struggles</h1>
+            <ul>
+                <li>Working with setInterval didn't go well, never worked and often broke other things with it</li>
+                <li>Combining aspects of image galleries was difficult as the code examples didn't tend to get along
+                    with eachother</li>
+                <li>As is apparent every single time I try to work with CSS, I don't know positioning. Still feel
+                    fairly clueless there</li>
+                <li>Getting the right images was difficult as I didn't have immediate access to most of them</li>
+                <li>Converting my resume to html</li>
+            </ul>
+            <h1>Above and Beyond</h1>
+            <p>For this requirement, I added some JS functions as mentioned previously for an image gallery and a
+                sidebar nav menu. I also wanted my CSS to be easy to read, most so I can look back at it in the future.</p>
+            <h1>Tools Used</h1>
+            <ul>
+            <li><a href="https://www.w3schools.com/w3css/default.asp">w3.css</a> and various w3 lessons, mainly on their CSS framework</li>
+            <li><a href="http://the-echoplex.net/flexyboxes/">Flexy Boxes</a>, a tool for help creating and toying around with flexbox pages</li>
+            <li>Font Awesome Icons</li>
+            <li><a href="https://fonts.google.com/specimen/Roboto?selection.family=Roboto">Google Fonts: Roboto</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        "use strict";
+
+        let isOpen = false;
+
+        function openNav() {
+            if (isOpen) { closeNav(); return; }
+            document.getElementById("mySidenav").style.width = "250px";
+            isOpen = true;
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            isOpen = false;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/portfolio.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>About Matt Hoffman</title>
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="resume.html">Resume (HTML)</a>
+        <a href="projects.html">Projects</a>
+        <a href="documentation.html">Documentation</a>
+    </div>
+    <div class="flex-container">
+        <div class="flex-item page-head w3-center" id="title-box">
+            <h1>About Me</h1>
+        </div>
+        <div class="flex-item page-head w3-center" id="nav-box">
+            <span onclick="openNav()">&#9776; menu</span>
+        </div>
+        <div class="flex-item img-text-format">
+            <img src="images/pfp_placeholder.jpg">
+            <p>For the first 18 years of my life, I lived in Loveland Ohio, a small town outside Cincinnati. During
+                most of my time at Loveland High School, I was sure I would be a game designer, so I spent a lot of
+                time preparing for college. I currently attend the Rochester Institute of Technology for the Game
+                Design and Development program. I plan on minoring in music technology. I've been playing numerous
+                instruments for about 11 years now, but I've recently been interested in production and composition. I
+                hope eventually work in some form of sound work for games. I've worked in a software office before and
+                I'm starting to miss it. I'm excited to continue to work towards my degree and can't wait to start my
+                CO-OPs.</p>
+        </div>
+    </div>
+
+    <script>
+        "use strict";
+
+        let isOpen = false;
+
+        function openNav() {
+            if (isOpen) { closeNav(); return; }
+            document.getElementById("mySidenav").style.width = "250px";
+            isOpen = true;
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            isOpen = false;
+        }
+    </script>
+</body>
+
+</html>
