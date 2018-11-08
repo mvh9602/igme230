@@ -1,0 +1,27 @@
+set slide index
+get all images
+get both arrows
+get all dots
+
+start slides at first slide
+start cycling slides
+
+when left arrow is clicked, go back 1 div
+when right arrow is clicked, go forward 1 div
+for each dot, assign click event that sets current div to the index
+
+add divs function (index change desired)
+    show div at current index plus desired change
+
+current div function (index desired)
+    show div at index desired and set current index to that
+
+show divs function (index desired)
+    if desired index is greater than length of image array, set index back to 1
+    if desired index is less than 1, set index to length of image array
+    iterating from 0 up to length of image array
+        make image at iteration index invisible
+    interating from 0 up to length of dot array
+        set dot at iteration index to unfilled instead of white fill
+    at image one below index, become visible
+    at dot one below index, fill with white

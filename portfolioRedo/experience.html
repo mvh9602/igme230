@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/portfolio.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Matt Hoffman's Work Experience</title>
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#">Work Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="documentation.html">Documentation</a>
+    </div>
+    <div class="flex-container">
+            <div class="flex-item" id="title-box">
+                <h1>My Work Experience</h1>
+            </div>
+            <div class="flex-item" id="nav-box">
+                <span onclick="openNav()">&#9776; open</span>
+            </div>
+            <div class="flex-item" id="about-box">
+    
+            </div>
+    
+        </div>
+
+    <script>
+        "use strict";
+
+        let isOpen = false;
+
+        function openNav() {
+            if (isOpen) { closeNav(); return; }
+            document.getElementById("mySidenav").style.width = "250px";
+            isOpen = true;
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            isOpen = false;
+        }
+    </script>
+</body>
+
+</html>
