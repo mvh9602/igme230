@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+    button{
+        background-color: red;
+    }
+
+    div{
+        height: 400px;
+        width: 400px;
+        margin-bottom: 20px;
+    }
+
+    #panel1{
+        background-color: cyan;
+    }
+    
+    #panel2{
+        background-color: magenta;
+    }
+    </style>
+</head>
+<body>
+    <button id="show">show</button>
+    <button id="hide">hide</button>
+
+    <div id="panel1">I have text here</div>
+    <div id="panel2">There's more text here</div>
+
+    <script>
+$(document).ready(function(){
+    $("#show").click(function(){
+        $("#panel1").show();
+    });
+
+    $("#hide").click(function(){
+        $("#panel1").hide();
+    });
+});
+    </script>
+</body>
+</html>
