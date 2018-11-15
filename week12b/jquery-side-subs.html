@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery Side Slide Animate</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jquery.slidereveal.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+        }
+
+        #navpanel {
+            display: grid;
+            grid-template-columns: 100px 1.5rem;
+            min-height: 200px;
+            max-height: 90vh;
+            overflow: scroll;
+            border: 1px solid black;
+            margin-bottom: 2em;
+            background-color: white;
+            position: fixed;
+            left: -100px;
+            z-index: 2;
+        }
+
+        #navtoggle {
+            grid-column-start: 2;
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        #navmenu {
+            grid-column-start: 1;
+            grid-row-start: 1;
+            align-items: top;
+        }
+
+        #close {
+            display: none;
+        }
+
+        #open {
+            font-size: 2.5rem;
+        }
+
+        .submenu-panel {
+            display: none; 
+        }
+
+        #content {
+            padding: 0 .5em 0 2em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navpanel">
+        <div id="navtoggle"><span id="open">+</span><span id="close">-</span></div>
+        <div id="navmenu">
+            <p>Nav Menu</p>
+            <ul>
+                <li><span class="submenu">Example Links</span>
+                    <ul class="submenu-panel">
+                        <li><a href="jquery-slide-panel.html">Slide Down</a></li>
+                        <li><a href="jquery-slide-side.html">Slide Side</a></li>
+                    </ul>
+                </li>
+                <li>Single Item</li>
+                <li><span class="submenu">Submenu 2</span>
+                    <ul class="submenu-panel">
+                        <li>Sub-Item 2.1</li>
+                        <li>Sub-Item 2.2</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="content">
+        <p>scenester Pitchfork swag plaid keffiyeh twee Banksy cray Carles 8-bit organic authentic pour-over mumblecore viral banh mi keytar next level sartorial occupy cliche brunch kitsch four loko crucifix letterpress freegan normcore literally salvia cornhole leggings typewriter irony VHS Bushwick Neutra ethical lomo ennui drinking vinegar messenger bag heirloom Cosby sweater deep v paleo Intelligentsia flexitarian DIY lo-fi 90's Tumblr 3 wolf moon jean shorts stumptown pop-up Wes Anderson direct trade art party tofu hashtag fanny pack mustache post-ironic Vice YOLO polaroid selvage pork belly selfies synth forage Schlitz wayfarers hella fingerstache quinoa bitters artisan gluten-free Echo Park Blue Bottle asymmetrical dreamcatcher craft beer Odd Future chia bespoke meggings McSweeney's Truffaut umami raw denim narwhal slow-carb XOXO food truck fap Portland whatever Pinterest shabby chic meh +1 tote bag Helvetica trust fund Kickstarter iPhone readymade kale chips ugh vinyl yr blog cardigan Austin small batch before they sold out PBR roof party street art disrupt pug you probably haven't heard of them Shoreditch beard cred Thundercats fixie farm-to-table aesthetic fashion axe church-key Etsy wolf Williamsburg pickled American Apparel Marfa tattooed try-hard put a bird on it locavore vegan biodiesel banjo chambray skateboard gastropub kogi Brooklyn Tonx sustainable seitan Godard sriracha photo booth squid High Life actually butcher PBR&B tousled distillery mixtape hoodie flannel single-origin coffee chillwave semiotics gentrify bicycle rights retro master cleanse mlkshk</p>
+
+        <p>ethical squid irony sustainable cred slow-carb keytar hella banjo synth Shoreditch vegan selfies kitsch forage Tumblr authentic yr fixie flannel church-key mustache Etsy Helvetica brunch bicycle rights single-origin coffee chambray Schlitz artisan twee fingerstache literally four loko occupy Marfa High Life roof party selvage Pitchfork 3 wolf moon freegan Vice crucifix iPhone readymade bitters American Apparel Tonx pour-over Pinterest Godard wayfarers VHS letterpress vinyl cardigan tote bag ugh try-hard trust fund banh mi beard Carles art party PBR chillwave Brooklyn Austin hoodie aesthetic messenger bag kale chips before they sold out viral drinking vinegar retro Portland polaroid food truck Blue Bottle master cleanse Odd Future jean shorts distillery fap mumblecore DIY Williamsburg ennui hashtag leggings asymmetrical raw denim umami Intelligentsia stumptown Truffaut butcher 8-bit 90's lo-fi Thundercats quinoa pickled meh chia typewriter cliche sriracha Wes Anderson direct trade craft beer whatever plaid +1 post-ironic street art McSweeney's photo booth scenester cray pop-up deep v YOLO biodiesel shabby chic skateboard next level farm-to-table Echo Park actually pork belly organic mlkshk gentrify keffiyeh PBR&B Kickstarter seitan Bushwick narwhal fashion axe XOXO gastropub lomo cornhole sartorial small batch heirloom swag bespoke kogi put a bird on it salvia blog flexitarian you probably haven't heard of them disrupt pug locavore meggings fanny pack gluten-free Cosby sweater tousled tofu paleo normcore wolf mixtape tattooed dreamcatcher semiotics Banksy Neutra</p>
+    </div>
+
+    <script>
+        $("#close").click(function () {
+            $("#navpanel").animate({ left: '-100' }, "slow");
+            $("#close").toggle();
+            $("#open").toggle();
+        });
+
+        $("#open").click(function () {
+            $("#navpanel").animate({ left: '0px' }, "slow");
+            $("#close").toggle();
+            $("#open").toggle();
+        });
+
+        $(".submenu").click(function() {
+            $(this).next(".submenu-panel").toggle();
+        });
+
+    </script>
+
+</body>
+
+</html>

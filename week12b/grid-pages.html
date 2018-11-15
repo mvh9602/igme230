@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid Pages</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Oswald;
+            font-size: 16px;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #page1 {
+            background-color: pink;
+        }
+
+        #page2 {
+            background-color: yellow;
+        }
+
+        .mixed3x3 {
+            max-width: 1000px;
+            display: grid;
+            min-height: 80vh;
+            width: 80vw;
+            grid-template-rows: 100px 1fr 1fr 50px;
+            grid-template-columns: 175px 1fr 1fr;
+            margin: 0 auto;
+        }
+
+        .cell {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: pink;
+            border: 1px dotted black;
+        }
+
+        .sidebar {
+            grid-row: 2/4;
+            display: flex;
+            flex-direction: column;
+            background-color: green;
+            padding-left: 2em;
+        }
+
+        .titlebar {
+            grid-column: 1/span 3;
+            display: flex;
+            padding: 0 .5em;
+            justify-content: space-between;
+            align-items: center;
+            background-color: lavender;
+        }
+
+        .footer {
+            grid-column: 1/4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lavender;
+        }
+
+        .logo {
+            width: 150px;
+            text-align: left;
+        }
+
+        .name {
+            font-size: 3em;
+            font-family: "Spicy Rice"
+        }
+
+        #navbar {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            margin-right: 20;
+            padding: 0;
+            transform: rotate(-90deg);
+        }
+
+        #navbar li {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="navbar">
+        <li><a href="#page1">page 1 | </a></li>
+        <li><a href="#page2">page 2 | </a></li>
+        <li>page 3</li>
+    </ul>
+
+    <div class="wrapper" id="page1">
+        <div class="mixed3x3">
+            <div class="titlebar">
+                <span class="logo">logo</span>
+                <span class="name">Somebody's Name</span>
+            </div>
+            <div class="sidebar">
+                <h2>Cell 2</h2>
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+            </div>
+            <div class="cell">Cell 3</div>
+            <div class="cell">Cell 4</div>
+            <div class="cell">Cell 5</div>
+            <div class="cell">Cell 6</div>
+            <div class="footer"><a href="#page2">Jump to Next Page</a></div>
+        </div>
+    </div>
+
+    <div class="wrapper" id="page2">
+        <div class="mixed3x3">
+            <div class="titlebar">
+                <span class="logo">logo</span>
+                <span class="name">This Is Page 2</span>
+                <ul class="navbar">
+                    <li>link 1</li>
+                    <li>link 2</li>
+                    <li>link 3</li>
+                </ul>
+            </div>
+            <div class="sidebar">
+                <h2>Cell 2</h2>
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+            </div>
+            <div class="cell">Cell 3</div>
+            <div class="cell">Cell 4</div>
+            <div class="cell">Cell 5</div>
+            <div class="cell">Cell 6</div>
+            <div class="footer"><a href="#page1">Jump to First Page</a></div>
+        </div>
+    </div>
+
+    <script>
+
+        /* JQuery for smooth scrolling (easier than native JS code)
+           Found at https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link */
+
+        $("a[href^='#']").click(function (event) {
+            event.preventDefault();
+            let target = $(this.hash);
+            $('html, body').animate({ scrollTop: target.offset().top }, 500);
+
+            // Make this more accessible by setting target.focus(); 
+            // See https://css-tricks.com/smooth-scrolling-accessibility/ for details
+
+            if (target.is(":focus")) { // Checking if the target was focused
+                return false;
+            } else {
+                target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                target.focus(); // Setting focus
+            };
+
+        });
+
+    </script>
+
+</body>
+
+</html>
