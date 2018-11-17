@@ -21,7 +21,7 @@
 
         #navpanel {
             display: grid;
-            grid-template-columns: 100px 1.5rem;
+            grid-template-columns: 130px 1.5rem;
             min-height: 200px;
             max-height: 90vh;
             overflow: scroll;
@@ -58,7 +58,7 @@
         }
 
         #content {
-            padding: 0 .5em 0 2em;
+            padding: 0 140px 0 140px;
         }
     </style>
 </head>
@@ -70,32 +70,32 @@
         <div id="navmenu">
             <p>Nav Menu</p>
             <ul>
-                <li><span class="submenu">Example Links</span>
+                <li><span class="submenu">Movies</span>
                     <ul class="submenu-panel">
-                        <li><a href="jquery-slide-panel.html">Slide Down</a></li>
-                        <li><a href="jquery-slide-side.html">Slide Side</a></li>
+                        <li>Dunkirk</li>
+                        <li>The Graduate</li>
                     </ul>
                 </li>
-                <li>Single Item</li>
-                <li><span class="submenu">Submenu 2</span>
+                <li><span class="submenu">Screening Questions</span>
                     <ul class="submenu-panel">
-                        <li>Sub-Item 2.1</li>
-                        <li>Sub-Item 2.2</li>
+                        <li>Rear Window</li>
+                        <li>Moonlight</li>
                     </ul>
                 </li>
+                <li>About My Prof</li>
             </ul>
         </div>
     </div>
 
     <div id="content">
-        <p>scenester Pitchfork swag plaid keffiyeh twee Banksy cray Carles 8-bit organic authentic pour-over mumblecore viral banh mi keytar next level sartorial occupy cliche brunch kitsch four loko crucifix letterpress freegan normcore literally salvia cornhole leggings typewriter irony VHS Bushwick Neutra ethical lomo ennui drinking vinegar messenger bag heirloom Cosby sweater deep v paleo Intelligentsia flexitarian DIY lo-fi 90's Tumblr 3 wolf moon jean shorts stumptown pop-up Wes Anderson direct trade art party tofu hashtag fanny pack mustache post-ironic Vice YOLO polaroid selvage pork belly selfies synth forage Schlitz wayfarers hella fingerstache quinoa bitters artisan gluten-free Echo Park Blue Bottle asymmetrical dreamcatcher craft beer Odd Future chia bespoke meggings McSweeney's Truffaut umami raw denim narwhal slow-carb XOXO food truck fap Portland whatever Pinterest shabby chic meh +1 tote bag Helvetica trust fund Kickstarter iPhone readymade kale chips ugh vinyl yr blog cardigan Austin small batch before they sold out PBR roof party street art disrupt pug you probably haven't heard of them Shoreditch beard cred Thundercats fixie farm-to-table aesthetic fashion axe church-key Etsy wolf Williamsburg pickled American Apparel Marfa tattooed try-hard put a bird on it locavore vegan biodiesel banjo chambray skateboard gastropub kogi Brooklyn Tonx sustainable seitan Godard sriracha photo booth squid High Life actually butcher PBR&B tousled distillery mixtape hoodie flannel single-origin coffee chillwave semiotics gentrify bicycle rights retro master cleanse mlkshk</p>
+        <h1>Intro to Film: FNRT 120 03</h1>
 
-        <p>ethical squid irony sustainable cred slow-carb keytar hella banjo synth Shoreditch vegan selfies kitsch forage Tumblr authentic yr fixie flannel church-key mustache Etsy Helvetica brunch bicycle rights single-origin coffee chambray Schlitz artisan twee fingerstache literally four loko occupy Marfa High Life roof party selvage Pitchfork 3 wolf moon freegan Vice crucifix iPhone readymade bitters American Apparel Tonx pour-over Pinterest Godard wayfarers VHS letterpress vinyl cardigan tote bag ugh try-hard trust fund banh mi beard Carles art party PBR chillwave Brooklyn Austin hoodie aesthetic messenger bag kale chips before they sold out viral drinking vinegar retro Portland polaroid food truck Blue Bottle master cleanse Odd Future jean shorts distillery fap mumblecore DIY Williamsburg ennui hashtag leggings asymmetrical raw denim umami Intelligentsia stumptown Truffaut butcher 8-bit 90's lo-fi Thundercats quinoa pickled meh chia typewriter cliche sriracha Wes Anderson direct trade craft beer whatever plaid +1 post-ironic street art McSweeney's photo booth scenester cray pop-up deep v YOLO biodiesel shabby chic skateboard next level farm-to-table Echo Park actually pork belly organic mlkshk gentrify keffiyeh PBR&B Kickstarter seitan Bushwick narwhal fashion axe XOXO gastropub lomo cornhole sartorial small batch heirloom swag bespoke kogi put a bird on it salvia blog flexitarian you probably haven't heard of them disrupt pug locavore meggings fanny pack gluten-free Cosby sweater tousled tofu paleo normcore wolf mixtape tattooed dreamcatcher semiotics Banksy Neutra</p>
+        <p>This course provides the student with an introduction to film as an art form. It presents a vocabulary for film analysis as well as the critical and analytical skills for interpreting films. The course examines the major aesthetic, structural, historical, and technical components of film. It considers how a film works, by looking internally at the multiple aspects that comprise the construction of a film, and externally at how a film affects the viewers. Students will watch a variety of feature films, primarily American, ranging in date from the 1940's through the 2000's. Clips from alternative films and foreign films will also be screened and discussed. Any artistic background in film, music, theatre, painting, sculpture, etc., is helpful, but no specific technical knowledge of film, video, or photography is required or expected.</p>
     </div>
 
     <script>
         $("#close").click(function () {
-            $("#navpanel").animate({ left: '-100' }, "slow");
+            $("#navpanel").animate({ left: '-130' }, "slow");
             $("#close").toggle();
             $("#open").toggle();
         });
@@ -107,7 +107,7 @@
         });
 
         $(".submenu").click(function() {
-            $(this).next(".submenu-panel").toggle();
+            $(this).next(".submenu-panel").slideToggle("slow");
         });
 
     </script>
