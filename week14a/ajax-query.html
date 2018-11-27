@@ -78,6 +78,28 @@
     <script>
         'use strict';
         
+    let verseChoose = document.querySelector("select");
+    let poemDisplay = document.querySelector("#selectedverse");
+    let verse = "verse1-2.txt";
+
+    function updateVerse(verse) {
+        let verseRequest = new XMLHttpRequest();
+        verseRequest.open('GET', verse);
+        verseRequest.responseType = 'text';
+        verseRequest.onload = function () {
+            poemDisplay.innerHTML = verseRequest.response;
+        };
+        verseRequest.send();
+    }
+
+    verseChoose.onchange = function () {
+        verseChoose.value = verse;
+        updateVerse(verse);
+    }
+
+    verseChoose.value = verse;
+    updateVerse(verse);
+
     </script>
 </body>
 
