@@ -58,8 +58,8 @@
     <div id="wrapper">
         <h1>AJAX Example</h1>
 
-        <h2>In Memory of William B. Yeats (Third Stanza)<br>
-        <span class="author">by W.H. Auden (1907-1973)</span></h2>
+        <h2>Sonnet 100<br>
+        <span class="author">by William Shakespeare (1609)</span></h2>
 
         <form>
             <label for="verse-choose">Choose a verse</label>
@@ -68,8 +68,6 @@
                 <option value="verse2">Verse 2</option>
                 <option value="verse3">Verse 3</option>
                 <option value="verse4">Verse 4</option>
-                <option value="verse5">Verse 5</option>
-                <option value="verse6">Verse 6</option>
             </select>
         </form>
 
@@ -82,7 +80,7 @@
     <script>
         'use strict';
     
-    let poem = "poem.txt";
+    let poem = "mypoem.txt";
     let verse = ("verse1");
     let verseString = `${poem} #${verse}`;
     $("#verse-choose").val(verse);
