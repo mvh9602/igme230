@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Initial AJAX File</title>
+
+    <style>
+        html,
+        pre {
+            font-family: sans-serif;
+        }
+
+        #wrapper {
+            margin: 0 auto;
+            width: 800px;
+            background-color: #ccc;
+            border-radius: 1rem;
+            height: 90vh;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        #selectedverse {
+            width: 400px;
+            margin: 1rem;
+            line-height: 1.5;
+            letter-spacing: 0.05rem;
+            padding: 1rem;
+            background-color: white;
+        }
+
+        label {
+            width: 200px;
+            margin-right: 33px;
+        }
+
+        select {
+            width: 350px;
+            padding: 5px;
+        }
+
+        .author {
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>AJAX Example</h1>
+
+        <h2>In Memory of William B. Yeats (Third Stanza)<br>
+        <span class="author">by W.H. Auden (1907-1973)</span></h2>
+
+        <form>
+            <label for="verse-choose">Choose a verse</label>
+            <select id="verse-choose" name="verse-choose">
+                <option value="verse1.txt">Verse 1</option>
+                <option value="verse2.txt">Verse 2</option>
+                <option value="verse3.txt">Verse 3</option>
+                <option value="verse4.txt">Verse 4</option>
+                <option value="verse5.txt">Verse 5</option>
+                <option value="verse6.txt">Verse 6</option>
+            </select>
+        </form>
+
+
+        <div id="selectedverse">
+            placeholder text
+        </div>
+
+    </div>
+    <script>
+        'use strict';
+    
+    let poem = "poem.txt";
+    let verse = ("verse1.txt");
+    let verseString = `${poem} #${verse}`;
+    $("#verse-choose").val(verse);
+    $("#selectedverse").load(verseString);
+
+    $("#verse-choose").change(function(){
+        verse = $(this).val();
+        $("#selectedverse").load(verse);
+    });
+
+    </script>
+</body>
+
+</html>
