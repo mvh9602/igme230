@@ -64,12 +64,12 @@
         <form>
             <label for="verse-choose">Choose a verse</label>
             <select id="verse-choose" name="verse-choose">
-                <option value="verse1.txt">Verse 1</option>
-                <option value="verse2.txt">Verse 2</option>
-                <option value="verse3.txt">Verse 3</option>
-                <option value="verse4.txt">Verse 4</option>
-                <option value="verse5.txt">Verse 5</option>
-                <option value="verse6.txt">Verse 6</option>
+                <option value="verse1">Verse 1</option>
+                <option value="verse2">Verse 2</option>
+                <option value="verse3">Verse 3</option>
+                <option value="verse4">Verse 4</option>
+                <option value="verse5">Verse 5</option>
+                <option value="verse6">Verse 6</option>
             </select>
         </form>
 
@@ -83,7 +83,7 @@
         'use strict';
     
     let poem = "poem.txt";
-    let verse = ("verse1.txt");
+    let verse = ("verse1");
     let verseString = `${poem} #${verse}`;
     $("#verse-choose").val(verse);
     $("#selectedverse").load(verseString);
