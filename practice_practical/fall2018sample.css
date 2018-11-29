@@ -1,0 +1,84 @@
+/*********************************
+General Formatting (Do Not Change)
+*********************************/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    /* sets base font size for rem sizing */
+    font-size: 16px;
+    font-family: Calibri, Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+header,
+footer {
+    background-color: #86af49;
+}
+
+nav,
+aside,
+article {
+    padding: .5rem;
+}
+
+nav, aside {
+    background-color: #b5e7a0;
+}
+
+
+/**************
+Your Formatting
+***************/
+
+#wrapper {
+    display: grid;
+    margin: auto;
+    height: 100vh;
+    width: 90vw;
+    max-width: 1200px;
+    grid-template-rows: 4rem 1fr 3rem;
+    grid-template-columns: 1fr 2fr 200px;
+}
+
+header, footer {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuitem {
+    background-color: white;
+    margin: 0;
+    border-top: 1px solid #b5e7a0;
+}
+
+.submenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+.menubox li {
+    padding-left: .25rem;
+    background-color: lightgray;
+}
+
+header, nav, article, aside, footer {
+    border: 1px dotted black;
+}
+
+@media screen and (min-width: 620px) {
+    .wrapper {
+
+    }
+}

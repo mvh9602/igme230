@@ -21,14 +21,6 @@
 
 }
 
-.name {
-
-}
-
-.navbar {
-
-}
-
 .sidebar {
     grid-row: 2 / -2;
     flex-direction: column;
