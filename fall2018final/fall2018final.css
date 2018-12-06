@@ -59,6 +59,8 @@ header, footer, nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .items {
@@ -67,11 +69,15 @@ header, footer, nav {
     padding: 0;
     display: none;
     background-color: #ddd;
+    position: fixed;
+    z-index: 2;
 }
 
 .items li {
     padding-left: .25rem;
     background-color: #ddd;
+    position: relative;
+    z-index: 2;
 }
 
 article {
