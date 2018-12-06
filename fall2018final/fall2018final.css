@@ -34,3 +34,89 @@ aside {
 /**************
 Your Formatting
 ***************/
+
+#yourgrid {
+    display: grid;
+    margin: auto;
+    height: 100vh;
+    width: 90vw;
+    max-width: 1200px;
+    grid-template-rows: 75px 30px 1fr 2fr 50px;
+    grid-template-columns: 1fr 2fr;
+}
+
+header, footer, nav {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: lightpink;
+}
+
+.menu {
+    background-color: #ccc;
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    background-color: #ddd;
+}
+
+.items li {
+    padding-left: .25rem;
+    background-color: #ddd;
+}
+
+article {
+    grid-column: 2 / -1;
+    grid-row: 3 / 5;
+    background-color: lightcyan;
+}
+
+aside {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    background-color: lightblue;
+}
+
+nav {
+    background-color: lavenderblush;
+}
+
+#extracredit {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    background-color: lightblue;
+}
+
+@media screen and (max-width: 620px) {
+    #yourgrid {
+        width: 100vw;
+        grid-template-rows: 75px 30px auto auto auto 30px;
+        grid-template-columns: 100vw;
+    }
+
+    article {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    aside {
+        grid-row: 4 / 5;
+    }
+
+    #extracredit {
+        grid-row: 5 / 6;
+    }
+
+    footer {
+        grid-row: -2 / -1;
+    }
+}
