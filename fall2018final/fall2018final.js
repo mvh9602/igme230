@@ -5,10 +5,10 @@ $(".menu").click(function() {
 });
 
 let display = "article0.txt";
-$("input").val(display);
+$("form").val(display);
 $("article").load(display);
 
-$("input").checked(function() {
+$("form").change(function() {
     display = $(this).val();
     $("article").load(display);
 });
