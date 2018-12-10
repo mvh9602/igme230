@@ -1,0 +1,42 @@
+/* INDEX */
+
+
+/*********
+GRID SETUP
+*********/
+
+#maingrid {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 75px auto 30px;
+}
+
+#header, #footer {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#leftfill, #playarea, #rightfill {
+    grid-row: 2 / 3;
+}
+
+#leftfill {
+    grid-column: 1 / 2;
+}
+
+#playarea {
+    grid-column: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rightfill {
+    grid-column: 3 / 4;
+}
+
+.gridbox {
+    border: 1px dotted black;
+}
