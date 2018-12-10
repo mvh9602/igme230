@@ -1,6 +1,10 @@
 /* INDEX */
-
-
+/*
+IMPORTS             ln 10
+GRID SETUP          ln 16
+FORMATING           ln 60
+MEDIA QUERIES       ln 83
+*/
 
 /******
 IMPORTS
@@ -14,33 +18,39 @@ GRID SETUP
 
 #maingrid {
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 75px 1fr 30px;
 }
 
+/* Every grid item is centered by default */
 .gridbox {
     display: flex;
     justify-content: center;
 }
 
+/* Header and footer go across the screen, vertically centered */
 #header, #footer {
     grid-column: 1 / -1;
     align-items: center;
 }
 
+/* Three items in second column */
 #leftfill, #playarea, #rightfill {
     grid-row: 2 / 3;
 }
 
+/* Where score is held */
 #leftfill {
     grid-column: 1 / 2;
 }
 
+/* Canvas/Matter.js renderer */
 #playarea {
     grid-column: 2 / 3;
     align-items: center;
 }
 
+/* Link to other page */
 #rightfill {
     grid-column: 3 / 4;
     justify-content: left;
@@ -49,6 +59,8 @@ GRID SETUP
 /********
 FORMATING
 ********/
+
+/* Secondary text font */
 span {
     font-family: 'Roboto Mono', monospace;
 }
@@ -62,6 +74,50 @@ a:hover {
     color: grey;
 }
 
+/* Primary text font */
 h1, p {
     font-family: 'Bungee', cursive;
+}
+
+/************
+MEDIA QUERIES
+************/
+
+@media screen and (max-width: 810px) {
+
+    /* Convert to a one column grid, canvas won't fit well, changing will destroy my code */
+    #maingrid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 75px auto auto auto 30px;
+    }
+    
+    /* Ajusting to fit new grid */
+    #leftfill, #playarea, #rightfill {
+        grid-column: 1 / -1;
+    }
+    
+    /* Now third row */
+    #leftfill {
+        grid-row: 3 / 4;
+        justify-content: right;
+    }
+    
+    /* Now second row */
+    #playarea {
+        grid-row: 2 / 3;
+        align-items: center;
+    }
+    
+    /* Now fourth row */
+    #rightfill {
+        grid-row: 4 / 5;
+        justify-content: center;
+    }
+
+    /* Makes links more obvious */
+    a {
+        text-decoration: underline;
+        color: black;
+    }
 }

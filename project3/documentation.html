@@ -16,18 +16,59 @@
             <h1>TOWER Documentation</h1>
         </span>
         <span class="gridbox" id="leftfill"></span>
-        <span class="gridbox" id="playarea">
-            http://brm.io/matter-js/
-            http://brm.io/matter-js/demo/
-            https://codersblock.com/blog/javascript-physics-with-matter-js/
-            https://www.youtube.com/watch?v=urR596FsU68
-
+        <span>
+            <p>HOW TO PLAY</p>
+            <ul>
+                <li>Click to drop a box</li>
+                <li>After landing, boxes will trim to fit box below it</li>
+                <li>Each spawned box has the size of the last box you dropped</li>
+                <li>Dropping a box and missing the last one you dropped will end the game</li>
+                <li>Dropping a box that becomes too small (smaller than a square) will end the game</li>
+                <li>Higher stacks with smaller boxes add up to higher scores</li>
+                <li>Build the highest tower with the highest score you can!</li>
+            </ul>
+            <p>RESOURCES USED</p>
+            <ul>
+                <li><a href="http://brm.io/matter-js/"></a>Matter.js</li>
+                <li><a href="http://brm.io/matter-js/demo/"></a>Matter.js demos</li>
+                <li><a href="https://codersblock.com/blog/javascript-physics-with-matter-js/"></a>Matter.js physics guide</li>
+                <li><a href="https://www.youtube.com/watch?v=urR596FsU68"></a>Video series on learning Matter.js</li>
+                <li><a href="https://fonts.google.com/specimen/Roboto+Mono"></a>Roboto-Mono font</li>
+                <li><a href="https://fonts.google.com/specimen/Bungee"></a>Bungee font</li>
+            </ul>
+            <p>DEV PROCESS</p>
+            <ul>
+                <li>Started by researching possible libraries</li>
+                <li>Had difficulty finding one that suited my needs and still looked good, settled on Matter.js</li>
+                <li>Looked pretty far into Matter.js to minimize confusion while building the game</li>
+                <li>Created html and css framework for the page</li>
+                <li>Got a base for working in Matter.js off of the website</li>
+                <li>Started adapting demos until I could spawn rectangles that moved back and forth before falling</li>
+                <li>Got rectangles to become static after landing</li>
+                <li>Rectangles only spawn so often and fall straight</li>
+                <li>Researched how to work with collisions (website documentation is highly lacking)</li>
+                <li>After a lot of time, rectangles lost hanging space after colliding, and I started to actually have a game</li>
+                <li>Added a very hacky reset</li>
+                <li>Improved visuals (somewhat) and added a score algorithm</li>
+                <li>Made it so you can lose the game by dropping a box off the edge or making boxes too small</li>
+                <li>Allowed game to continue forever by adding scrolling and a gradual increase to speed of the game</li>
+                <li>Celebrated finally finishing the game by commenting everything</li>
+                <li>Worked on documentation and finished up css</li>
+            </ul>
+            <p>NOTES</p>
+            <ul>
+                <li>The documentation (or lack thereof) of Matter.js increased the amount of time this took significantly</li>
+                <li>I appologize for not giving a proposal. I forgot during break and managed to totally miss your email</li>
+                <li>I wanted the actual physics to play more of a role in dropping boxes, but that proved to be difficult to achieve</li>
+                <li>Direct manipulation of velocity is very finicky, so I typically went for the simplest solutions for those issues</li>
+                <li>There is a way to reset the renderer without reloading the page, but nothing online actually explained it in full</li>
+                <li>I have no clue why, but I can't change the fill color on my boxes. Another bug I never managed a solution for</li>
+                <li>I understand this project doesn't fully fit in with the guidelines you set, but I really wanted to do something more GDD that I could polish and put on a resume</li>
+                <li>Thanks for reading this wall of text, and I want you to know I really enjoyed this class despite my dislike for web languages</li>
+            </ul>
         </span>
         <span class="gridbox" id="rightfill">
             <a href="project3.html">TOWER</a>
-        </span>
-        <span class="gridbox" id="footer">
-            Matt Hoffman 2018
         </span>
     </div>
 

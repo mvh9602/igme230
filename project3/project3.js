@@ -1,6 +1,9 @@
 /*INDEX*/
-
-
+/*
+MATTER.JS SETUP    ln 9
+EVENTS/LOOPS       ln 83
+FUNCTIONS          ln 182
+*/
 
 /**************
 MATTER.JS SETUP
@@ -19,6 +22,7 @@ let Engine = Matter.Engine,
     Mouse = Matter.Mouse,
     World = Matter.World,
     Body = Matter.Body,
+    Bounds = Matter.Bounds,
     Bodies = Matter.Bodies,
     Vector = Matter.Vector;
 
@@ -29,7 +33,10 @@ let myEngine = Engine.create(),
 // create a renderer
 let myRender = Render.create({
     element: document.getElementById("playarea"),
-    engine: myEngine
+    engine: myEngine,
+    options: {
+        hasBounds: true
+    }
 });
 
 // create a box and a ground
@@ -47,6 +54,8 @@ let width = 250;
 let timer = 0;
 let speed = 0.00066;
 let score = 0;
+let spawnY = 100;
+let scrolled = false;
 
 // add all of the bodies to the world
 World.add(myWorld, [boxA, ground]);
@@ -84,7 +93,7 @@ Events.on(myEngine, 'afterUpdate', function(event) {
     }
 
     // after a drop, create a new box and add it to the world and stack, then prep for next drop
-    if(timer >= 60 * 1.5 && dropped) {
+    if(timer >= 60 * 1.5 && dropped && stack[boxCount - 1].isStatic) {
         if(boxCount % 2) color = color1;
         else color = color2;
         stack.push(Bodies.rectangle(400, 100, width, 40, { label: 'rect', render: { fillStyle: color, lineWidth: 10 }}));
@@ -92,8 +101,10 @@ Events.on(myEngine, 'afterUpdate', function(event) {
         stack[boxCount - 1].sleepThreshold = 120;
         World.add(myWorld, stack[boxCount - 1]);
         console.log("Box spawned at index " + boxCount);
+
         dropped = false;
         timer = 0;
+
         stack[boxCount - 2].isStatic = true;
         console.log("Box at index " + (boxCount - 1) + " set to static");
     }
@@ -103,6 +114,21 @@ Events.on(myEngine, 'afterUpdate', function(event) {
         float(stack[boxCount - 1], myTime);
         Body.setAngularVelocity(stack[boxCount - 1], 0);
         stack[boxCount - 1].velocity.y = 0;
+    }
+
+    if (boxCount > 4 && !dropped && !scrolled) {
+        // create a vector to translate the view
+        var direction = Vector.create(0 , -1);
+
+        translate = Vector.mult(direction, 1);
+
+        // prevent the view moving outside the world bounds
+        if (myRender.bounds.min.y + translate.y <= spawnY - 100) {
+            scrolled = true;
+        }
+
+        // move the view
+        Bounds.translate(myRender.bounds, translate);
     }
     
     $("#score").html("Score: " + score);
@@ -133,6 +159,16 @@ Events.on(myEngine, 'collisionStart', function(event) {
             if(pair.bodyA.position.y > pair.bodyB.position.y) {
                 collide(pair.bodyB, pair.bodyA);
             }
+            // start scrolling at 5 boxes
+            if(boxCount > 4) {
+                scrolled = false;
+                spawnY -= 40;
+            }
+        }
+
+        // set first box as static once it lands
+        if (pair.bodyA.label === 'rect' && pair.bodyB.label === 'ground' && boxCount < 2) {
+            boxA.isStatic = true;
         }
 
         // reset if box misses
@@ -150,7 +186,7 @@ FUNCTIONS
 function float(rect, time) {
     let px = 400 + 200 * Math.sin(time * speed);
     Body.setVelocity(rect, { x: rect.velocity.x, y: 0 });
-    Body.setPosition(rect, { x: px, y: 100 });
+    Body.setPosition(rect, { x: px, y: spawnY });
 }
 
 // make changes and calculations needed for two boxes colliding
@@ -189,6 +225,12 @@ function collide(top, bottom) {
         console.log("Width set to " + width);
     }
 
+    // reset if box size too small
+    if(width < 40) reset();
+
+    // increment speed
+    speed += speed * 0.03;
+
     // calculate earned points and add to score, higher stacks and smaller widths mean higher scores
     let points = Math.floor(40 + (5 * boxCount) * (250 / width));
     score += points;
@@ -219,7 +261,3 @@ function reset() {
     World.add(myWorld, [boxA, ground]);
     dropped = false;*/
 }
-
-/***********
-JQUERY CALLS
-***********/
