@@ -8,7 +8,7 @@ GRID SETUP
 #maingrid {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 75px auto 30px;
+    grid-template-rows: 75px 1fr 30px;
 }
 
 #header, #footer {
