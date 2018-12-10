@@ -1,6 +1,13 @@
 /* INDEX */
 
 
+
+/******
+IMPORTS
+******/
+
+@import url('https://fonts.googleapis.com/css?family=Bungee|Roboto+Mono');
+
 /*********
 GRID SETUP
 *********/
@@ -11,11 +18,14 @@ GRID SETUP
     grid-template-rows: 75px 1fr 30px;
 }
 
+.gridbox {
+    display: flex;
+    justify-content: center;
+}
+
 #header, #footer {
     grid-column: 1 / -1;
-    display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 #leftfill, #playarea, #rightfill {
@@ -28,15 +38,30 @@ GRID SETUP
 
 #playarea {
     grid-column: 2 / 3;
-    display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 #rightfill {
     grid-column: 3 / 4;
+    justify-content: left;
 }
 
-.gridbox {
-    border: 1px dotted black;
+/********
+FORMATING
+********/
+span {
+    font-family: 'Roboto Mono', monospace;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: grey;
+}
+
+h1, p {
+    font-family: 'Bungee', cursive;
 }

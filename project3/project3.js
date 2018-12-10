@@ -33,7 +33,10 @@ let myRender = Render.create({
 });
 
 // create a box and a ground
-let boxA = Bodies.rectangle(400, 100, 250, 40, { label: 'rect' });
+let color1 = "#eeeeee";
+let color2 = "#888888";
+let color = color1;
+let boxA = Bodies.rectangle(400, 100, 250, 40, { label: 'rect', render: { fillStyle: color1, lineWidth: 10 }});
 let dropped = false;
 let ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true, label: 'ground' });
 
@@ -82,7 +85,9 @@ Events.on(myEngine, 'afterUpdate', function(event) {
 
     // after a drop, create a new box and add it to the world and stack, then prep for next drop
     if(timer >= 60 * 1.5 && dropped) {
-        stack.push(Bodies.rectangle(400, 100, width, 40, { label: 'rect' }));
+        if(boxCount % 2) color = color1;
+        else color = color2;
+        stack.push(Bodies.rectangle(400, 100, width, 40, { label: 'rect', render: { fillStyle: color, lineWidth: 10 }}));
         boxCount++;
         stack[boxCount - 1].sleepThreshold = 120;
         World.add(myWorld, stack[boxCount - 1]);
